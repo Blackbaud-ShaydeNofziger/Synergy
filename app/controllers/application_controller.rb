@@ -5,6 +5,6 @@ class ApplicationController < ActionController::Base
 
   # GET /
   def main
-  	render :file => 'public/index.html'
+  	render :file => 'public/parent.html'
   end
 end
