@@ -8,7 +8,7 @@ class CreateEvents < ActiveRecord::Migration
       t.string :info
       t.string :picture
       t.int :maxVolunteers
-      t.bool :active
+      t.boolean :active
 
       t.timestamps null: false
     end

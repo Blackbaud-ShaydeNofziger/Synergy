@@ -7,7 +7,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :avatar
       t.string :phone
       t.string :bio
-      t.bool :active
+      t.boolean :active
 
       t.timestamps null: false
     end
