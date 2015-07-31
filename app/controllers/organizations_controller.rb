@@ -1,10 +1,11 @@
 class OrganizationsController < ApplicationController
+	protect_from_forgery with: :null_session
 
 	# POST
 	def create
 
 		if(params.has_key?(:name))
-		  org = Organizaton.new(name:    params[:name],
+		  org = Organization.new(name:    params[:name],
 		                        website: params[:message],
   													phone:   params[:phone],
   													info:    params[:info],
@@ -16,12 +17,19 @@ class OrganizationsController < ApplicationController
 			render nothing: true, status: 500
 		end
 	end
+	
+	# GET
+	def id
+		name = params[:name]
+		@org = Organization.find_by name: params[:name]
+		return render json: @org.id
+	end
 
 	# GET
 	def show
 		id = params[:id]
 		@org = Organization.find_by_id(id)
-		render json: @org
+		return render json: @org
 	end
 
 	# POST

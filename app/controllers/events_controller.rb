@@ -1,11 +1,36 @@
 class EventsController < ApplicationController
+	protect_from_forgery with: :null_session
 
 	# POST
 	def create
+		if(params.has_key?(:name))
+		  ev = Event.new(name:    params[:name],
+		                        start: params[:start],
+  								location:   params[:location],
+  								info:    params[:info],
+  								picture: params[:picture],
+								maxVolunteers: params[:maxVolunteers],
+								active: true)
+  		ev.save
+		#not sure if this should be true
+  		render nothing: true, status: 200
+		else
+			render nothing: true, status: 500
+		end
 	end
 	
 	# GET
 	def id
+		name = params[:name]
+		@ev = Event.find_by name: params[:name]
+		return render json: @ev.id
+	end
+		
+	# GET
+	def show
+		id = params[:id]
+		@ev = Event.find_by_id(id)
+		return render json: @ev
 	end
 	
 	# POST
