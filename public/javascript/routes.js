@@ -22,6 +22,10 @@ synergy.config(['$routeProvider',
         templateUrl: '/templates/bye.html',
         controller: 'IndexController'
       }).
+	  when('/home', {
+		templateUrl: '/templates/home.html',
+		controller: 'homePageController'
+	  }).
       when('/profile', {
         templateUrl: '/templates/profile.html',
         controller: 'ProfileController'
