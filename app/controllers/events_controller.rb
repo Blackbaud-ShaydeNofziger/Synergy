@@ -22,8 +22,14 @@ class EventsController < ApplicationController
 	# GET
 	def id
 		name = params[:name]
-		@ev = Event.find_by name: params[:name]
-		return render json: @ev.id
+		#@ev = Event.find_by name: params[:name]
+		#return render json: @ev.id
+		for ev in Event.all
+			if ev.name == name
+				break
+			end
+		end
+		return render json: ev.id
 	end
 		
 	# GET
