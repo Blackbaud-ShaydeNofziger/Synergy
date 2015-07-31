@@ -14,7 +14,7 @@ class OrganizationsController < ApplicationController
 	# GET
 	def show
 		id = params[:id]
-		@org = Organzation.find_by_id(id)
+		@org = Organization.find_by_id(id)
 		render json: @org
 	end
 
