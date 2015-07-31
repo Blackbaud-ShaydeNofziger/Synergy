@@ -9,7 +9,8 @@ class OrganizationsController < ApplicationController
 		                        website: params[:message],
   													phone:   params[:phone],
   													info:    params[:info],
-  													address: params[:info])
+  													address: params[:info],
+													active: true)
   		org.save
 			#not sure if this should be true
   		render nothing: true, status: 200
@@ -23,7 +24,6 @@ class OrganizationsController < ApplicationController
 		name = params[:name]
 		#@org = Organization.find_by name: params[:name]
 		for org in Organization.all
-			puts org.name
 			if org.name == name
 				break
 			end
@@ -33,7 +33,7 @@ class OrganizationsController < ApplicationController
 	end
 
 	# GET
-	def sho
+	def show
 		id = params[:id]
 		@org = Organization.find_by_id(id)
 		return render json: @org

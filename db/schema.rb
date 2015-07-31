@@ -18,13 +18,14 @@ ActiveRecord::Schema.define(version: 20150731024101) do
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
-    t.datetime "start"
-    t.datetime "end"
+    t.datetime "startDate"
+    t.datetime "endDate"
     t.string   "location"
     t.string   "info"
     t.string   "picture"
     t.integer  "maxVolunteers"
     t.boolean  "active"
+    t.string   "owner"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end

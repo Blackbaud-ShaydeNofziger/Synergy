@@ -14,6 +14,7 @@ class UsersController < ApplicationController
 		@user = User.find_by_id(id)
 		render json: @user
 	end
+	
 	# POST
 	def update
 	end

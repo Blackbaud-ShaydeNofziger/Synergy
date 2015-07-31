@@ -5,11 +5,13 @@ class EventsController < ApplicationController
 	def create
 		if(params.has_key?(:name))
 		  ev = Event.new(name:    params[:name],
-		                        start: params[:start],
+		                        startDate: params[:startDate],
+								endDate: params[:endDate],
   								location:   params[:location],
   								info:    params[:info],
   								picture: params[:picture],
 								maxVolunteers: params[:maxVolunteers],
+								owner: params[:owner],
 								active: true)
   		ev.save
 		#not sure if this should be true
