@@ -1,0 +1,56 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-4"></div>
+		<div class="col-lg-4 well well-lg">
+			<div ng-app="synergyControllers" ng-controller="createEventController">
+			  <form role="form" name="createEvent" novalidate>
+			  <div class="form-group">
+				Name:<br>
+				<input type="text" class="form-control" ng-model="eform.name">
+				</div>
+				<div class="form-group">
+				Start Date:<br>
+				<input type="date" class="form-control" name="input" ng-model="eform.startDateTime"
+				   placeholder="yyyy-MM-dd" min="1776-01-01" max="9999-12-31" required /></div>
+				<div class="form-group">
+				Address:<br>
+				<input type="text" class="form-control" ng-model="eform.street">
+				</div>
+				<div class="form-group">
+				Address 2 (Apt.):<br>
+				<input type="text" class="form-control" ng-model="eform.apt">
+				</div>
+				<div class="form-group">
+				City:<br>
+				<input type="text" class="form-control" ng-model="eform.city">
+				</div>
+				<div class="form-group">
+				State:<br>
+				<input type="text" class="form-control" ng-model="eform.state">
+				</div>
+				<div class="form-group">
+				Zip:<br>
+				<input type="text" class="form-control" ng-model="eform.zip">
+				</div>
+				<div class="form-group">
+				Information:<br>
+				<textarea rows="4" cols="50"type="text" class="form-control" ng-model="eform.info"></textarea>
+				</div>
+				<div class="form-group">
+				Picture (URL):<br>
+				<input type="url" name="pic" class="form-control" ng-model="eform.picture" required>
+					<span class="error" ng-show="createEvent.pic.$error.url" style="color: red;">
+				  Not valid url!</span>
+				  </div>
+				<div class="form-group">
+				End Date:<br>
+			 <input type="date" name="input" class="form-control" ng-model="eform.endDateTime"
+				   placeholder="yyyy-MM-dd" min="1776-01-01" max="9999-12-31" required /></div>
+
+				<button ng-click="submit()">Submit</button>
+			  </form>
+			</div>
+		</div>
+		<div class="col-lg-4"></div>
+	</div>
+</div>
