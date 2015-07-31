@@ -11,15 +11,15 @@
     <h1>Available Events</h1>
     <hr>
     <div class="well" ng-repeat="event in events">
-      <img ng-src="{{event.image}}" height="50" width="50" />
-      <span class="padding bold-text">{{event.organization}}</span>
+      <img ng-src="{{event.picture}}" height="50" width="50" />
+      <span class="padding bold-text">{{event.name}}</span>
+      <span class="padding">{{event.owner}}</span>
+      <span class="padding">{{event.info}}</span>
       <div style="float:right;">
         Location: <span class="padding bold-text">{{event.location}}</span>
-        <br />
         <span class="padding">{{event.startTime}} - {{event.endTime}}</span>
-        <span class="padding"><button>Volunteer</button></span>
       </div>
-      <span class="padding">{{event.info}}</span>
+      <span class="padding"><button>Volunteer</button></span>
     </div>
   </div>
 </div>

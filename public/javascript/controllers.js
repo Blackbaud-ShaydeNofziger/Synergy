@@ -76,16 +76,12 @@ synergyControllers.controller('signInController', ['$scope', '$http', '$window',
   }
 ]);
 
-synergyControllers.controller('createEventController', ['$scope',
+synergyControllers.controller('createEventController', ['$scope', '$http',
   
-  function($scope) {
+  function($scope, $http) {
   
     $scope.result = "";
   
-    $scope.master = {name: "", startDateTime: "", street: "",
-      apt: "", city: "", state: "", zip: "",
-      info: "", picture: "",
-        endDateTime: ""};
     
     /*$http.post('/someUrl', $scope.master).
       success(function(data, status, headers, config) {
@@ -100,6 +96,23 @@ synergyControllers.controller('createEventController', ['$scope',
       $scope.submit = function() {
         $scope.master = $scope.eform;
         $scope.result = $scope.master;
+
+        var addr = $scope.master.street + " " + $scope.master.apt + " " + $scope.master.city + " " + $scope.master.state + " " + $scope.master.zip;
+
+        $http.post('/events/create', {
+          'name': $scope.master.ename,
+          'startDate': $scope.master.startDateTime,
+          'endDate': $scope.master.endDateTime,
+          'location': addr,
+          'info': $scope.master.einfo,
+          'picture': $scope.master.picture,
+          'maxVolunteers': $scope.master.maxvolunteers,
+          'owner': $scope.master.owner
+        }).success(function(data, status, headers, config)  {
+          alert("New event created successfully!");
+        }).error(function(data, status, headers, config)  {
+          alert("ERROR: Event not created. Info: " + status);
+        });
       };
   }
   
@@ -196,8 +209,8 @@ synergyControllers.controller('homePageController', ['$scope', '$window',
 	
 ]);
 
-synergyControllers.controller('BrowseEventsController', ['$scope',
-  function($scope)  {
+synergyControllers.controller('BrowseEventsController', ['$scope', '$http',
+  function($scope, $http)  {
 
     var start1 = formatTime(new Date(1438272000000));
     var end1   = formatTime(new Date(1438290000000));
@@ -223,6 +236,14 @@ synergyControllers.controller('BrowseEventsController', ['$scope',
         'image': 'http://images.clipartpanda.com/school-books-images-back-to-school-books.jpg'
       }
     ];
+
+    $http.get('/events/showAll').
+      success(function(data, status, headers, config) {
+        $scope.events = data;
+      }).
+      error(function(data, status, headers, config) {
+        alert("ERROR: Couldn't retrieve events");
+      });
   }
 
 ]);
