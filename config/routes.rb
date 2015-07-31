@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  #devise_for :users
+  devise_for :users, controllers: { sessions: "users/sessions" }
+  
   root to: 'application#main'
 
   get '/organizations/:id', to: 'organizations#show', as: 'org_show'
