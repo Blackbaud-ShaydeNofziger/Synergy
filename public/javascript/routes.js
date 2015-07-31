@@ -7,8 +7,16 @@ synergy.config(['$routeProvider',
 	function($routeProvider)	{
 		$routeProvider.
 			when('/', {
+				templateUrl: '/templates/sign-in.html',
+				controller: 'signInController'
+			}).
+			when('/hello', {
 				templateUrl: '/templates/hello.html',
-				controller: 'IndexController'
+				controller: 'indexController'
+			}).
+			when('/create_event', {
+				templateUrl: '/templates/create_event.html',
+				controller: 'createEventController'
 			}).
 			when('/bye', {
 				templateUrl: '/templates/bye.html',
