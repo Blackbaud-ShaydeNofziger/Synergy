@@ -14,6 +14,10 @@ synergy.config(['$routeProvider',
 				templateUrl: '/templates/hello.html',
 				controller: 'indexController'
 			}).
+			when('/create_event', {
+				templateUrl: '/templates/create_event.html',
+				controller: 'createEventController'
+			}).
 			when('/bye', {
 				templateUrl: '/templates/bye.html',
 				controller: 'IndexController'

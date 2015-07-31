@@ -31,3 +31,32 @@ synergyControllers.controller('signInController', ['$scope', '$http', '$window',
 	}
 	
 ]);
+
+synergyControllers.controller('createEventController', ['$scope',//
+	
+	function($scope) {
+	
+		$scope.result = "";
+	
+		$scope.master = {name: "", startDateTime: "", street: "",
+			apt: "", city: "", state: "", zip: "",
+			info: "", picture: "",
+				endDateTime: ""};
+		
+		/*$http.post('/someUrl', $scope.master).
+		  success(function(data, status, headers, config) {
+			// this callback will be called asynchronously
+			// when the response is available
+		  }).
+		  error(function(data, status, headers, config) {
+			// called asynchronously if an error occurs
+			// or server returns response with an error status.
+		  });*/
+		  
+		  $scope.submit = function() {
+				$scope.master = $scope.eform;
+				$scope.result = $scope.master;
+			};
+	}
+	
+]);
