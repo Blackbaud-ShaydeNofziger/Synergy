@@ -5,9 +5,11 @@ Rails.application.routes.draw do
 
   root to: 'application#main'
 
-  post '/create' => 'organizations#create'
+  #organizations
+  get '/organizations/:id' to: 'organizations#show', as: 'organizations'
+  post '/organizations/create' to: 'organizations#create', as: 'organizations'
 
-  get '/user/:id' => 'users#show'
+  get '/user/:id' to: 'users#show', as: 'users'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
