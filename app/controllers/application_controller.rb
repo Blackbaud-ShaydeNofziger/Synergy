@@ -6,7 +6,6 @@ class ApplicationController < ActionController::Base
   # GET /
   def main
 	render :file => 'public/parent.html', layout: 'layouts/application_synergy'
-	
   end
   
   # POST 
