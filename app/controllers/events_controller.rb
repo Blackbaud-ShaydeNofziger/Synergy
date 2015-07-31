@@ -33,6 +33,13 @@ class EventsController < ApplicationController
 		return render json: @ev
 	end
 	
+	# GET
+	def showAll
+		name = params[:name]
+		@events = Event.all
+		return render json: @events
+	end
+	
 	# POST
 	def update
 	end

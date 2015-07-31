@@ -21,15 +21,22 @@ class OrganizationsController < ApplicationController
 	# GET
 	def id
 		name = params[:name]
-		@org = Organization.find_by name: params[:name]
+		#@org = Organization.take# Organization.find_by name: params[:name]
+		@org = Organization.where(name: name).take
 		return render json: @org.id
 	end
 
 	# GET
 	def show
 		id = params[:id]
-		@org = Organization.find_by_id(id)
+		@org = Organization.take #Organization.find_by_id(id)
 		return render json: @org
+	end
+	
+	# GET
+	def showAll
+		@orgs = Organization.all
+		return render json: @orgs
 	end
 
 	# POST

@@ -7,12 +7,15 @@ Rails.application.routes.draw do
 
   get '/organizations/id/:name', to: 'organizations#show', as: 'org_id' 
   get '/organizations/show/:id', to: 'organizations#show', as: 'org_show'
+
+  get '/organizations/showAll', to: 'organizations#showAll', as: 'org_showAll'
   post '/organizations/create', to: 'organizations#create', as: 'org_create'
 
   get '/user/show/:id', to: 'users#show', as: 'user_show'
   
   get '/events/id/:name', to: 'events#show', as: 'ev_id' 
-  get '/events/show/:id', to: 'events#show', as: 'ev_show'
+  get '/events/show/:id', to: 'events#show', as: 'ev_showAll'
+	get '/events/showAll', to: 'events#showAll', as: 'ev_show'
   post '/events/create', to: 'events#create', as: 'ev_create'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
