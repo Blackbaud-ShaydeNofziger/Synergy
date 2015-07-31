@@ -5,6 +5,24 @@ class ApplicationController < ActionController::Base
 
   # GET /
   def main
-    render :file => 'public/parent.html'
+	render :file => 'public/parent.html', layout: 'layouts/application_synergy'
   end
+  
+  # POST 
+  #def register
+  #end
+  # removed because is handled by Devise
+  
+  # POST
+  def deactivate
+  end
+  
+  # POST
+  def search
+  end
+  
+  def after_sign_in_path_for(user)
+	return ''
+  end
+  
 end
