@@ -212,31 +212,6 @@ synergyControllers.controller('homePageController', ['$scope', '$window',
 synergyControllers.controller('BrowseEventsController', ['$scope', '$http',
   function($scope, $http)  {
 
-    var start1 = formatTime(new Date(1438272000000));
-    var end1   = formatTime(new Date(1438290000000));
-    var start2 = formatTime(new Date(1438172000000));
-    var end2   = formatTime(new Date(1438190000000));
-
-
-    $scope.events = [
-      {
-        'startTime': start1,
-        'endTime': end1,
-        'location': 'Charleston Soup Kitchen',
-        'organization': 'Charleston Church Co.',
-        'info': 'Serve the needy in the community lunch and dinner',
-        'image': 'http://i.imgur.com/tYfBwCH.jpg'
-      },
-      {
-        'startTime': start2,
-        'endTime': end2,
-        'location': 'Wando High School',
-        'organization': 'Wando School District',
-        'info': 'Teach highschoolers how to code!',
-        'image': 'http://images.clipartpanda.com/school-books-images-back-to-school-books.jpg'
-      }
-    ];
-
     $http.get('/events/showAll').
       success(function(data, status, headers, config) {
         $scope.events = data;
@@ -244,6 +219,41 @@ synergyControllers.controller('BrowseEventsController', ['$scope', '$http',
       error(function(data, status, headers, config) {
         alert("ERROR: Couldn't retrieve events");
       });
+  }
+
+]);
+
+synergyControllers.controller('BrowseOrgsController', ['$scope', "$http",
+  function($scope, $http) {
+    $http.get('/organizations/showAll').
+      success(function(data, status, headers, config) {
+        $scope.organizations = data;
+      }).
+      error(function(data, status, headers, config) {
+        alert("ERROR: Couldn't retrieve orgs");
+      });
+  }
+]);
+
+synergyControllers.controller('CreateOrgController', ['$scope', '$http',
+  function($scope, $http) {
+    $scope.organization = {};
+    var create = function() {
+      $http.post('/organizations/create', {
+      'name': $scope.organization.orgname,
+      'website': $scope.organization.website,
+      'phone': $scope.organization.phone,
+      'info': $scope.organization.moreinfo,
+      'address': $scope.organization.address
+
+    }).success(function(data, status, headers, config)  {
+      alert("Org created successfully!");
+      window.location.href='#/organizations/browse'
+    }).error(function(data, status, headers, config)  {
+      alert("Org creation failed!!!");
+    });
+    }
+    
   }
 
 ]);
