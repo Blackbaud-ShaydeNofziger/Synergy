@@ -41,7 +41,7 @@ synergyControllers.controller('OrganizationController', ['$scope', '$http',
 			
 		}
 	}
-])]);
+]);
 
 synergyControllers.controller('signInController', ['$scope', '$http', '$window',
 	function($scope, $http, $window)	{
