@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+<<<<<<< HEAD
   #devise_for :users
   devise_for :users, controllers: { sessions: "users/sessions" }
   
@@ -17,6 +18,8 @@ Rails.application.routes.draw do
   get '/events/show/:id', to: 'events#show', as: 'ev_showAll'
 	get '/events/showAll', to: 'events#showAll', as: 'ev_show'
   post '/events/create', to: 'events#create', as: 'ev_create'
+=======
+>>>>>>> master
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -71,4 +74,6 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  
+  get '/users/:id', to: 'users#show'
 end
