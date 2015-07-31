@@ -1,4 +1,4 @@
-var synergyControllers = angular.module('synergyControllers', []);
+var synergyControllers = angular.module('synergyControllers', ['ngSanitize']);
 
 synergyControllers.controller('IndexController', ['$scope',
 	function($scope)	{
@@ -48,9 +48,16 @@ synergyControllers.controller('signInController', ['$scope', '$http', '$window',
 
 		$scope.login_message = "";
 		
+		$scope.propername = "admin@gmail.com";
+		$scope.properpassword = "password";
+		
 		$scope.click = function() {
 		
-			$http.get('http://www.w3schools.com/angular/customers.php').
+			if($scope.login == $scope.propername && $scope.password == $scope.properpassword)
+				$window.location.href = '#/hello.html';
+			else
+				$scope.login_message = "<span class='label label-danger'>Login/Password are incorrect</span>";
+			/*$http.get('http://www.w3schools.com/angular/customers.php').
 			  success(function(data, status, headers, config) {
 				
 				$scope.login_message = "<span class='label label-danger'>Login/Password are incorrect</span>";
@@ -61,7 +68,7 @@ synergyControllers.controller('signInController', ['$scope', '$http', '$window',
 
 				$scope.login_message = "<span class='label label-danger'>Danger Label</span>";
 			  
-			  });
+			  });*/
 		  
 		 };
 	
