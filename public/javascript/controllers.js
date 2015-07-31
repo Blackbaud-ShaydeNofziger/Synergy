@@ -158,22 +158,21 @@ synergyControllers.controller('homePageController', ['$scope', '$window',
 				'post': 'Come serve the needy this week at Charleston Church Co.! Visit our page for more details.',
 				'image': 'http://i.imgur.com/tYfBwCH.jpg'
 			},
-						{
-				'startTime': start1,
-				'endTime': end1,
-				'location': 'Charleston Soup Kitchen',
-				'organization': 'Charleston Church Co.',
-				'info': 'Serve the needy in the community lunch and dinner',
-				'image': 'http://i.imgur.com/tYfBwCH.jpg'
-			},
-						{
-				'startTime': start1,
-				'endTime': end1,
-				'location': 'Charleston Soup Kitchen',
-				'organization': 'Charleston Church Co.',
-				'info': 'Serve the needy in the community lunch and dinner',
-				'image': 'http://i.imgur.com/tYfBwCH.jpg'
-			},
+      {
+        'startTime': start2,
+        'endTime': end2,
+        'location': 'Wando High School',
+        'organization': 'Wando School District',
+        'info': 'Teach highschoolers how to code!',
+        'image': 'http://images.clipartpanda.com/school-books-images-back-to-school-books.jpg'
+      },
+
+      {
+		'ispost': true,
+        'organization': 'Wando School District',
+        'post': 'Hey guys! If you know how to code, think about helping some high schoolers out!  See our page for more detail.',
+        'image': 'http://images.clipartpanda.com/school-books-images-back-to-school-books.jpg'
+      },
 						{
 				'startTime': start1,
 				'endTime': end1,
