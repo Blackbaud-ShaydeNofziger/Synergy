@@ -7,4 +7,18 @@ class ApplicationController < ActionController::Base
   def main
   	render :file => 'public/parent.html'
   end
+  
+  # POST 
+  #def register
+  #end
+  # removed because is handled by Devise
+  
+  # POST
+  def deactivate
+  end
+  
+  # POST
+  def search
+  end
+  
 end
