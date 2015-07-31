@@ -10,6 +10,7 @@ class OrganizationsController < ApplicationController
   													info:    params[:info],
   													address: params[:info])
   		org.save
+			#not sure if this should be true
   		render nothing: true, status: 200
 		else
 			render nothing: true, status: 500
