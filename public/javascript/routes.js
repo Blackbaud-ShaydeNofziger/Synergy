@@ -13,6 +13,14 @@ synergy.config(['$routeProvider',
 			when('/bye', {
 				templateUrl: '/templates/bye.html',
 				controller: 'IndexController'
+			}).
+			when('/profile', {
+				templateUrl: '/templates/profile.html',
+				controller: 'ProfileController'
+			}).
+			when('/organization/create', {
+				templateUrl: '/templates/create_organization.html',
+				controller: 'OrganizationController'
 			});
 	}
 ]);
