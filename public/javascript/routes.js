@@ -29,6 +29,10 @@ synergy.config(['$routeProvider',
 			when('/organization/create', {
 				templateUrl: '/templates/create_organization.html',
 				controller: 'OrganizationController'
+			}).
+			when('/events/browse', {
+				templateUrl: '/templates/browse_events.html',
+				controller: 'BrowseEventsController'
 			});
 	}
 ]);
