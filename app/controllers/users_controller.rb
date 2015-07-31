@@ -30,7 +30,14 @@ class UsersController < ApplicationController
 	# POST
 	def update
     id = params[:id]
-    @user = User.find_by_id(id)
+    user = User.find_by_id(id)
+    user.update(fName: params[:fName],
+                lName: params[:lName],
+                avatar: params[:avatar],
+                phone: params[:phone],
+                bio: params[:bio],
+                active: true)
+    user.save
 
 	end
 

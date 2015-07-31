@@ -53,8 +53,10 @@ synergyControllers.controller('signInController', ['$scope', '$http', '$window',
 		
 		$scope.click = function() {
 		
-			if($scope.login == $scope.propername && $scope.password == $scope.properpassword)
+			if($scope.login == $scope.propername && $scope.password == $scope.properpassword){
 				$window.location.href = '#/home';
+				document.getElementById("homelink").href = '#/home';
+			}
 			else
 				$scope.login_message = "<span class='label label-danger'>Login/Password are incorrect</span>";
 			/*$http.get('http://www.w3schools.com/angular/customers.php').
@@ -110,6 +112,7 @@ synergyControllers.controller('createEventController', ['$scope', '$http',
           'owner': $scope.master.owner
         }).success(function(data, status, headers, config)  {
           alert("New event created successfully!");
+          window.location.href='#/events/browse'
         }).error(function(data, status, headers, config)  {
           alert("ERROR: Event not created. Info: " + status);
         });
