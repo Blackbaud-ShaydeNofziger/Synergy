@@ -2,10 +2,10 @@ class UsersController < ApplicationController
 
 	# POST
 	def volunteerAtEvent
-		@ID = params[:event_id]
-		volunteerCount = Volunteer.count(:conditions => "eventID = @ID")
-		render json: volunteerCount
-	
+	end
+
+	# GET
+	def id
 	end
 
 	#GET
@@ -14,7 +14,6 @@ class UsersController < ApplicationController
 		@user = User.find_by_id(id)
 		render json: @user
 	end
-	
 	# POST
 	def update
 	end
