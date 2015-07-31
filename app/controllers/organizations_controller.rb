@@ -6,10 +6,10 @@ class OrganizationsController < ApplicationController
 
 		if(params.has_key?(:name))
 		  org = Organization.new(name:    params[:name],
-		                        website: params[:message],
+		                        website: params[:website],
   													phone:   params[:phone],
   													info:    params[:info],
-  													address: params[:info],
+  													address: params[:address],
 													active: true)
   		org.save
 			#not sure if this should be true
@@ -18,7 +18,7 @@ class OrganizationsController < ApplicationController
 			render nothing: true, status: 500
 		end
 	end
-	
+
 	# GET
 	def id
 		name = params[:name]
@@ -38,7 +38,7 @@ class OrganizationsController < ApplicationController
 		@org = Organization.find_by_id(id)
 		return render json: @org
 	end
-	
+
 	# GET
 	def showAll
 		@orgs = Organization.all

@@ -7,8 +7,12 @@
       <div ng-app="synergyControllers" ng-controller="createEventController">
         <form role="form" name="createEvent" novalidate>
         <div class="form-group">
+        Event Owner Org:<br />
+        <input type="text" class="form-control" ng-model="eform.owner">
+        </div>
+        <div class="form-group">
         Name:<br>
-        <input type="text" class="form-control" ng-model="eform.name">
+        <input type="text" class="form-control" ng-model="eform.ename">
         </div>
         <div class="form-group">
         Start Date:<br>
@@ -41,7 +45,11 @@
         </div>
         <div class="form-group">
         Information:<br>
-        <textarea rows="4" cols="50"type="text" class="form-control" ng-model="eform.info"></textarea>
+        <textarea rows="4" cols="50"type="text" class="form-control" ng-model="eform.einfo"></textarea>
+        </div>
+        <div class="form-group">
+        Max Volunteers:<br />
+        <input type="integer" class="form-control" ng-model="eform.maxvolunteers" />
         </div>
         <div class="form-group">
         Picture (URL):<br>

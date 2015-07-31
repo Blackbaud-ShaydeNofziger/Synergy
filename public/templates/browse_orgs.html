@@ -1,0 +1,21 @@
+<style>
+  .bold-text  {
+    font-weight: bold;
+  }
+  .padding  {
+    padding-right: 1em;
+  }
+</style>
+<div class="container">
+  <div class="row">
+    <h1>Available Organizations</h1>
+    <hr>
+    <div class="well" ng-repeat="organization in organizations">
+      <span class="padding bold-text">{{organization.name}}</span>
+      <span class="padding">{{organization.info}}</span>
+      <a ng-href="{{organization.website}}" style="float:right;">Website</a>
+      <span class="padding" style="float:right;">{{organization.phone}}</span>
+      <span class="padding" style="float:right;">{{organization.address}}</span>
+    </div>
+  </div>
+</div>
