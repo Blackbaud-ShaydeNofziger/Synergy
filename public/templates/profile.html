@@ -1,32 +1,35 @@
 <div class="container">
 	<div class="row">
-		<h1>Profile</h1>
-		<hr>
-		<div class="col-md-4" ng-controller="ProfileUpdateController">
-			<form class="simple-form">
+		<div class="col-lg-3"></div>
+		<div class="col-lg-6 well well-lg" ng-controller="ProfileUpdateController">
+			<div class="jumbotron"><p style="text-align: center;">Profile</p></div>
+			<hr>
+			<form role="form">
 				<div class="form-group">
 					<label>First Name:</label>
-					<input style="float:right;" type="text" name="firstName" ng-model="user.first_name">
+					<input style="float:right;" type="text" class="form-control" name="firstName" ng-model="user.first_name">
 				</div>
 				<div class="form-group">
 					<label>Last Name:</label>
-					<input style="float:right;" type="text" name="lastName" ng-model="user.last_name">
+					<input style="float:right;" type="text" name="lastName" class="form-control" ng-model="user.last_name">
 				</div>
 				<div class="form-group">
 					<label>Email:</label>
-					<input style="float:right;" type="email" name="email" ng-model="user.email">
+					<input style="float:right;" type="email" name="email" class="form-control" ng-model="user.email">
 				</div>
 				<div class="form-group">
 					<label>Phone Number:</label>
-					<input style="float:right;" type="text" name="phone" ng-model="user.phone" ng-maxlength="10" ng-minlength="10">
+					<input style="float:right;" type="text" name="phone" class="form-control" ng-model="user.phone" ng-maxlength="10" ng-minlength="10">
 				</div>
 				<div class="form-group">
 					<label>Interests:</label>
-					<input style="float:right;" type="text" name="interests" ng-model="user.interests" ng-list>
+					<input style="float:right;" type="text" name="interests" class="form-control" ng-model="user.interests" ng-list>
 				</div>
-				<input type="button" ng-click="reset()" value="Reset" />
-				<input type="submit" ng-click="update(user)" value="Save" />
+				<br><br><br>
+				<button type="button" class="btn btn-default" ng-click="reset()">Reset</button>
+				<button type="submit" class="btn btn-default" ng-click="update(user)">Submit</button>
 			</form>
 		</div>
+		<div class="col-lg-3"></div>
 	</div>
 </div>
